@@ -68,6 +68,7 @@ Run the build command from the **root folder** of your workspace.
 npx ng build simple-audio-player --configuration production
 cd dist/simple-audio-player
 npm pack
+cd ../..
 
 ```
 
