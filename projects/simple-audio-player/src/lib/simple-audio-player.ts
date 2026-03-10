@@ -1,10 +1,10 @@
-import { Component, Input, ViewChild, ElementRef, signal, AfterViewInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { 
-  IonButton, 
-  IonIcon, 
-  IonCard, 
-  IonCardContent 
+import {
+  IonButton,
+  IonIcon,
+  IonCard,
+  IonCardContent
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { playCircleOutline, pauseCircleOutline } from 'ionicons/icons';
@@ -15,29 +15,23 @@ import { playCircleOutline, pauseCircleOutline } from 'ionicons/icons';
   imports: [CommonModule, IonButton, IonIcon, IonCard, IonCardContent],
   templateUrl: './simple-audio-player.html',
   styleUrls: ['./simple-audio-player.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SimpleAudioPlayer implements AfterViewInit {
-  
-  // Input URL (reactive)
-  @Input() set url(value: string) {
-    this._url.set(value || '');
-  }
-  private _url = signal('');
-  get url () {
-    return this._url();
-  }
+export class SimpleAudioPlayer {
+
+  // Sample Audio:
+  // https://s3.amazonaws.com/citizen-dj-assets.labs.loc.gov/audio/items/loc-fma/fma-164281.mp3
+  // Sample audio repo:
+  // https://citizen-dj.labs.loc.gov/loc-fma/use/
+
+  @Input() url = '';
 
   @ViewChild('audioRef') private audioRef!: ElementRef<HTMLAudioElement>;
 
-  readonly isPlaying = signal(false);
+  isPlaying = false;
 
   constructor() {
-    // Fix for IonIcon (this was probably causing your earlier errors)
     addIcons({ playCircleOutline, pauseCircleOutline });
-  }
-
-  ngAfterViewInit() {
-    // Ready for programmatic control
   }
 
   play() {
@@ -49,6 +43,6 @@ export class SimpleAudioPlayer implements AfterViewInit {
   }
 
   toggle() {
-    this.isPlaying() ? this.pause() : this.play();
+    this.isPlaying ? this.pause() : this.play();
   }
 }
