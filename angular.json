@@ -6,5 +6,31 @@
   },
   "newProjectRoot": "projects",
   "projects": {
+    "simple-audio-player": {
+      "projectType": "library",
+      "root": "projects/simple-audio-player",
+      "sourceRoot": "projects/simple-audio-player/src",
+      "prefix": "okdoc",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/simple-audio-player/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/simple-audio-player/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/simple-audio-player/tsconfig.spec.json"
+          }
+        }
+      }
+    }
   }
 }

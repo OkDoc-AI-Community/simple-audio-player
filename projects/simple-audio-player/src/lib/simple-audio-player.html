@@ -1,0 +1,13 @@
+<ion-card>
+  <ion-card-content class="ion-text-center">
+    <ion-button fill="clear" (click)="toggle()" size="large">
+      <ion-icon [name]="isPlaying() ? 'pause-circle-outline' : 'play-circle-outline'" slot="icon-only" size="large">
+      </ion-icon>
+    </ion-button>
+  </ion-card-content>
+</ion-card>
+
+<!-- Hidden native audio -->
+<audio #audioRef [src]="url" (play)="isPlaying.set(true)" (pause)="isPlaying.set(false)"
+  (ended)="isPlaying.set(false)">
+</audio>
