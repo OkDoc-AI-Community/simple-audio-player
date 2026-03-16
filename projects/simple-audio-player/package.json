@@ -1,6 +1,6 @@
 {
   "name": "@okdoc-ai-community/simple-audio-player",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "peerDependencies": {
     "@angular/common": "^20.3.0",
     "@angular/core": "^20.3.0",
