@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "release": "node scripts/release.mjs",
+    "release:push": "git push origin HEAD --tags"
   },
   "prettier": {
     "printWidth": 100,
