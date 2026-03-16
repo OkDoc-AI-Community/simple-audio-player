@@ -7,24 +7,25 @@ import {
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { playCircleOutline, pauseCircleOutline } from 'ionicons/icons';
-import { OkDocPlugin, McpTool, OkDocNotifier, McpToolResult } from '@okdoc/plugin-sdk';
+import { OkDocPlugin, McpTool, McpToolResult } from '@okdoc-ai/plugin-sdk';
+import { OkDocNotifier } from '@okdoc-ai/plugin-sdk/angular';
 
 @OkDocPlugin({
-  id: 'simple-audio-player',
+  id: 'odc-okdoc-simple-audio-player',
   name: 'Simple Audio Player',
   description: 'A basic audio player that can play, pause, and load audio files via URL.',
   version: '0.0.8',
   icon: 'musical-notes-outline',
-  namespace: 'audio_player',
+  namespace: 'odc-okdoc-simple-audio-player',
 })
 @Component({
-  selector: 'okdoc-simple-audio-player',
+  selector: 'odc-simple-audio-player',
   imports: [IonButton, IonIcon, IonCard, IonCardContent],
   templateUrl: './simple-audio-player.html',
   styleUrls: ['./simple-audio-player.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SimpleAudioPlayer {
+export class OdcSimpleAudioPlayer {
 
   // Sample Audio:
   // https://s3.amazonaws.com/citizen-dj-assets.labs.loc.gov/audio/items/loc-fma/fma-164281.mp3
@@ -58,7 +59,7 @@ export class SimpleAudioPlayer {
   @McpTool({
     name: 'set_url',
     description: 'Set the audio URL and load a new track',
-    parameters: {
+    inputSchema: {
       type: 'object',
       properties: { url: { type: 'string', description: 'The URL of the audio file to play' } },
       required: ['url'],

@@ -1,5 +1,5 @@
 {
-  "name": "okdoc-plugin-simple-audio-player-angular",
+  "name": "@okdoc-ai-community/simple-audio-player-workspace",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -29,7 +29,7 @@
     "@angular/platform-browser": "^20.3.0",
     "@angular/router": "^20.3.0",
     "@ionic/angular": "^8.8.1",
-    "@okdoc/plugin-sdk": "file:../../okdoc-plugin-sdk",
+    "@okdoc-ai/plugin-sdk": "file:../../okdoc-plugin-sdk",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

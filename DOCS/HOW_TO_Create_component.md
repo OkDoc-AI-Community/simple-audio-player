@@ -89,7 +89,7 @@ import { SimpleAudioPlayer } from 'simple-audio-player';
 ```
 
 ```html
-<okdoc-simple-audio-player [url]="'https://example.com/audio.mp3'" />
+<odc-simple-audio-player [url]="'https://example.com/audio.mp3'" />
 ```
 
 

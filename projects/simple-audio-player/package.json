@@ -1,11 +1,11 @@
 {
-  "name": "simple-audio-player",
-  "version": "0.0.8",
+  "name": "@okdoc-ai-community/simple-audio-player",
+  "version": "0.0.9",
   "peerDependencies": {
     "@angular/common": "^20.3.0",
     "@angular/core": "^20.3.0",
     "@ionic/angular": "^8.0.0",
-    "@okdoc/plugin-sdk": ">=0.1.0",
+    "@okdoc-ai/plugin-sdk": ">=1.0.0",
     "ionicons": "^7.0.0"
   },
   "dependencies": {
