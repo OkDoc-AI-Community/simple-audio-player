@@ -30,10 +30,13 @@ export class OdcSimpleAudioPlayer {
 
   // Sample Audio:
   // https://s3.amazonaws.com/citizen-dj-assets.labs.loc.gov/audio/items/loc-fma/fma-164281.mp3
+  // https://raw.githubusercontent.com/rafaelreis-hotmart/Audio-Sample-files/refs/heads/master/sample.mp3
   // Sample audio repo:
   // https://citizen-dj.labs.loc.gov/loc-fma/use/
 
-  url = model('');
+  private defaultAudioUrl = 'https://raw.githubusercontent.com/rafaelreis-hotmart/Audio-Sample-files/refs/heads/master/sample.mp3';
+
+  url = model(this.defaultAudioUrl);
 
   isPlaying = signal(false);
 
