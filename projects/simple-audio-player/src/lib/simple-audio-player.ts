@@ -11,12 +11,13 @@ import { OkDocPlugin, McpTool, McpToolResult } from '@okdoc-ai/plugin-sdk';
 import { OkDocNotifier } from '@okdoc-ai/plugin-sdk/angular';
 
 @OkDocPlugin({
-  id: 'odc-okdoc-simple-audio-player',
+  id: 'okdoc-simple-audio-player',
   name: 'Simple Audio Player',
   description: 'A basic audio player that can play, pause, and load audio files via URL.',
   version: '0.0.8',
   icon: 'musical-notes-outline',
-  namespace: 'odc-okdoc-simple-audio-player',
+  namespace: 'simple_audio_player',
+  author: { name: 'OkDoc AI Community', url: 'https://github.com/OkDoc-AI-Community' },
 })
 @Component({
   selector: 'odc-simple-audio-player',
